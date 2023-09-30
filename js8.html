@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <style>
+        html, body {
+            height: 100%; /* Ensure both html and body take up full viewport height */
+        }
+
+        body {
+            margin: 0; /* Remove default margin */
+            background-image: linear-gradient(rgb(236, 222, 135), rgb(211, 165, 105), rgb(160, 85, 154));
+            background-repeat: no-repeat;
+            background-size: cover; /* Make the background cover the full viewport */
+        }
+        button{
+            background-color: red;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: white;
+            width: 100px;
+            height: 20px;
+        }
+        .error-msg {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center><h2 style="color:blue">Registration Form</h2>
+    <table >
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <tr>
+                <th style="width: 300px">
+                    <label for="firstname">First Name</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="text" id="firstname" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="lastname">Last Name</label>
+                </th>
+                <td  style="width: 600px">
+                    <input type="text" id="lastname" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="email">Email</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="email" id="email" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="password">Password</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="password" id="password" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="reEnter">Re-enter Password</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="password" id="reEnter" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR OR MISMATCH</span>
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2" style="width: 300px">
+                    <p>Gender</p>
+                </th>
+                <td style="width: 600px">
+                    <input type="radio" id="male" name="Gender" value="Male">
+                    <label for="male">Male</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 600px">
+                    <input type="radio" id="female" name="Gender" value="Female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="age">Age</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="number" id="age" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="phone">Phone Number</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="tel" id="phone" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr style="height:100px;width: 300px;">
+                <th>
+                    <label for="address">Address</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="text" id="address" style="height:100px; width: 600px;">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 300px">
+                    <label for="state">state</label>
+                </th>
+                <td style="width: 600px">
+                    <input type="text" id="state" style="width: 600px">
+                </td>
+                <td>
+                    <span class="error-msg">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="country">Country</label>
+                </th>
+                <td>
+                    <select id="country" name="country">
+                        <option value="">choose your country</option>
+                        <option value="India">India</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="South Korea">South Korea</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Languages Known</th>
+                <td>
+                    <input type="checkbox" id="English">
+                    <label for="English">English</label>
+                    <input type="checkbox" id="Kannada">
+                    <label for="Kannada">Kannada</label>
+                    <input type="checkbox" id="Hindi">
+                    <label for="Hindi">Hindi</label>
+                    <input type="checkbox" id="Telugu">
+                    <label for="Telugu">Telugu</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="verify">
+                    <label for="verify">Hereby I declare all the given details are true</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right;">
+                    Login in to <a href="https://ethnus.com/">ethnus</a> website
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    <button>REGISTER</button>
+</center>
+<script>
+    function validateForm() {
+        let isValid = true;
+        const fields = document.querySelectorAll("input[type=text], input[type=email], input[type=password]");
+        
+        fields.forEach(field => {
+            const id = field.getAttribute("id");
+            const errorSpan = document.querySelector(`#${id} + .error-msg`);
+
+            if (field.value.trim() === "") {
+                errorSpan.style.display = "inline";
+                isValid = false;
+            } else {
+                errorSpan.style.display = "none";
+            }
+        });
+
+        return isValid;
+    }
+</script>
+</body>
+</html>

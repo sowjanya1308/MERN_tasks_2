@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* nav ul li{
+            padding : 0 50px 0 50px;
+        }
+        nav span{
+            padding : 0 500px 0 300px;
+        } */
+        body{
+          overflow-x: hidden;
+        }
+        body::-webkit-scrollbar{
+          display: none;
+        }
+
+        .nbar{
+          background-color: grey;
+        }
+        .nbar ul li a{
+          color: white;
+        }
+
+        .box{
+          background-color: #52595D;
+          height: 100vh;
+        }
+  
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bs1.css">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+    crossorigin="anonymous">
+    <title>bootstrap 1</title>
+</head>
+
+<body>
+    <div class="p-3 bg-primary-subtle text-center">Ethnus layout</div>
+    <!--Nav bar-->
+    <nav class="navbar nbar navbar-expand-sm navbar-light bg-dark.bg-gradient">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">MENU</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACT</a>
+        </li>
+      </ul>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">SIGN UP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">LOGIN</a>
+        </li>			
+        </ul>		  
+      </div>
+      </div>
+    </nav>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+        <div class="col-lg-6 col-md-5 col-sm-4">Write your content here</div>
+        <div class="box col-lg-2 col-md-3 col-sm-4 text-white text-center">This is</div>
+      </div>
+</body>
+</html>

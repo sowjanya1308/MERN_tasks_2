@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        input {
+            border: 3px solid red;
+        }
+        span.error {
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError">This field is required</span>
+        <br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email">
+        <span class="error" id="emailError">A valid email address is required</span>
+        <br><br>
+        <label for="website">Website: </label>
+        <input type="text" id="website" name="website">
+        <span class="error" id="websiteError">A valid URL is required</span>
+        <br><br>
+        <label for="msg">Message: </label>
+        <input type="text" id="msg" name="msg">
+        <span class="error" id="msgError">This field is required</span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Reset previous errors
+            let isValid = true;
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const website = document.getElementById("website").value;
+            const msg = document.getElementById("msg").value;
+
+            if (name.trim() === "") {
+                document.getElementById("nameError").style.display = "inline";
+                document.getElementById("name").classList.add("error");
+                isValid = false;
+            }
+
+            if (email.trim() === "") {
+                document.getElementById("emailError").style.display = "inline";
+                document.getElementById("email").classList.add("error");
+                isValid = false;
+            }
+
+            if (website.trim() === "") {
+                document.getElementById("websiteError").style.display = "inline";
+                document.getElementById("website").classList.add("error");
+                isValid = false;
+            }
+
+            if (msg.trim() === "") {
+                document.getElementById("msgError").style.display = "inline";
+                document.getElementById("msg").classList.add("error");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

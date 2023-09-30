@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Date and Time</title>
+</head>
+<body>
+    <h1>Date and Time</h1>
+    <p id="datetime"></p>
+    <button onclick="showDate()">Show Date</button>
+    <button onclick="showTime()">Show Time</button>
+
+    <script>
+        function showDate() {
+            const datetimeElement = document.getElementById("datetime");
+
+            // Get the current date
+            const now = new Date();
+
+            // Format the date as "Day Month DayOfMonth Year"
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString(undefined, options);
+
+            // Update the HTML element with the formatted date
+            datetimeElement.innerHTML = `${dateString}`;
+        }
+
+        function showTime() {
+            const datetimeElement = document.getElementById("datetime");
+
+            // Get the current time
+            const now = new Date();
+
+            // Format the time as "Day Month DayOfMonth Year Hours:Minutes:Seconds TimeZone"
+            const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            const timeString = now.toLocaleDateString(undefined, options);
+
+            // Update the HTML element with the formatted time
+            datetimeElement.innerHTML = `${timeString} (India Sandard Time)`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    #train {
+      position: relative;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<center>
+<body>
+
+  <img id="train" src="https://js.cx/clipart/train.gif">
+  <h2>Click the following buttons to handle the animation</h2>
+  <button id="startButton">Start</button>
+  <button id="stopButton">Stop</button>
+
+  <script>
+    const train = document.getElementById('train');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    let timer;
+
+    startButton.onclick = function() {
+      if (!timer) {
+        let start = Date.now();
+        timer = setInterval(function() {
+          let timePassed = Date.now() - start;
+
+          train.style.left = timePassed / 5 + 'px';
+
+          if (timePassed > 2000) {
+            clearInterval(timer);
+            timer = null; // Reset the timer when animation is complete
+          }
+        }, 20);
+      }
+    }
+
+    stopButton.onclick = function() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null; // Reset the timer when animation is stopped
+      }
+    }
+  </script>
+
+</body>
+</center>
+</html>
